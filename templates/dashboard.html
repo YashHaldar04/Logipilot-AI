@@ -1,0 +1,420 @@
+```html
+{% extends "base.html" %}
+
+{% block page_title %}
+Dashboard
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO ALERT ================= -->
+
+<div class="hero-alert">
+
+    <div class="hero-left">
+
+        <div class="hero-icon">
+            ⚠️
+        </div>
+
+        <div>
+
+            <h2>
+                3 High Priority Shipments Require Immediate Attention
+            </h2>
+
+            <p>
+                AI has detected customs congestion, weather disruptions and
+                potential route delays.
+            </p>
+
+        </div>
+
+    </div>
+
+    <button class="primary-btn">
+
+        Review Recommendations
+
+    </button>
+
+</div>
+
+<!-- ================= STATS ================= -->
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <span class="stat-title">
+            Total Shipments
+        </span>
+
+        <h2 id="shipmentCounter">
+            1248
+        </h2>
+
+        <span class="green-text">
+            ▲ 8.2% this week
+        </span>
+
+    </div>
+
+    <div class="stat-card">
+
+        <span class="stat-title">
+            Delayed
+        </span>
+
+        <h2>
+            47
+        </h2>
+
+        <span class="orange-text">
+            12 Critical
+        </span>
+
+    </div>
+
+    <div class="stat-card">
+
+        <span class="stat-title">
+            AI Alerts
+        </span>
+
+        <h2>
+            18
+        </h2>
+
+        <span class="blue-text">
+            Live Monitoring
+        </span>
+
+    </div>
+
+    <div class="stat-card">
+
+        <span class="stat-title">
+            Overall Risk
+        </span>
+
+        <h2>
+            72%
+        </h2>
+
+        <span class="red-text">
+            High
+        </span>
+
+    </div>
+
+</div>
+
+<!-- ================= GRID ================= -->
+
+<div class="dashboard-grid">
+
+    <!-- LEFT -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                Recent Shipments
+
+            </h3>
+
+        </div>
+
+        <table class="shipment-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Route</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>#SH421</td>
+
+                    <td>Mumbai → Dubai</td>
+
+                    <td>
+                        🟢 On Time
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#SH422</td>
+
+                    <td>Delhi → Germany</td>
+
+                    <td>
+                        🟠 Delayed
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#SH423</td>
+
+                    <td>Shanghai → Mumbai</td>
+
+                    <td>
+                        🔴 Customs Hold
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#SH424</td>
+
+                    <td>Singapore → Chennai</td>
+
+                    <td>
+                        🟢 In Transit
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#SH425</td>
+
+                    <td>Tokyo → Mumbai</td>
+
+                    <td>
+                        🟠 Weather Delay
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                🤖 AI Command Center
+
+            </h3>
+
+        </div>
+
+        <div class="risk-score">
+
+            <div class="risk-top">
+
+                <span>
+                    Current Risk Score
+                </span>
+
+                <strong>
+
+                    72%
+
+                </strong>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"
+                     style="width:72%;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ai-list">
+
+            <div class="ai-item">
+
+                ⚠ Port Congestion Detected
+
+            </div>
+
+            <div class="ai-item">
+
+                🌧 Heavy Rain Forecast
+
+            </div>
+
+            <div class="ai-item">
+
+                🚚 Alternative Carrier Available
+
+            </div>
+
+            <div class="ai-item">
+
+                📦 Customs Delay Predicted
+
+            </div>
+
+            <div class="ai-item">
+
+                ✅ ETA Recalculated
+
+            </div>
+
+        </div>
+
+        <button class="primary-btn full-btn">
+
+            Generate AI Report
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= SECOND GRID ================= -->
+
+<div class="dashboard-grid">
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                AI Recommendations
+
+            </h3>
+
+        </div>
+
+        <div class="recommendation-list">
+
+            <div class="recommendation">
+
+                ✅ Switch Shipment #422 to DHL Express
+
+            </div>
+
+            <div class="recommendation">
+
+                ✅ Update ETA (+2 Days)
+
+            </div>
+
+            <div class="recommendation">
+
+                ✅ Notify Customer
+
+            </div>
+
+            <div class="recommendation">
+
+                ✅ Route via Alternate Port
+
+            </div>
+
+            <div class="recommendation">
+
+                ✅ Increase Insurance Coverage
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                Live Activity
+
+            </h3>
+
+        </div>
+
+        <div id="activityFeed">
+
+            <div class="activity-item">
+
+                09:21 - Shipment #482 delayed
+
+            </div>
+
+            <div class="activity-item">
+
+                09:27 - Weather alert generated
+
+            </div>
+
+            <div class="activity-item">
+
+                09:31 - AI rerouted Germany shipment
+
+            </div>
+
+            <div class="activity-item">
+
+                09:42 - Customs congestion detected
+
+            </div>
+
+            <div class="activity-item">
+
+                09:48 - ETA updated
+
+            </div>
+
+            <div class="activity-item">
+
+                09:55 - DHL recommendation approved
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+{% endblock %}
+```

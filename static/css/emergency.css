@@ -1,0 +1,445 @@
+/* ==========================================
+   EMERGENCY TRANSPORT PAGE
+========================================== */
+
+/* SEARCH SECTION */
+
+.search-card{
+
+    max-width:1200px;
+
+    margin:0 auto 30px auto;
+
+    padding:30px;
+
+}
+
+.search-card h2{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#6b7280;
+
+    margin-bottom:28px;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+/* FORM */
+
+.transport-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.transport-grid label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+.transport-grid select{
+
+    width:100%;
+
+    padding:15px 16px;
+
+    border:1px solid #dbe2ea;
+
+    border-radius:12px;
+
+    background:white;
+
+    font-size:15px;
+
+    font-family:'Inter',sans-serif;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.transport-grid select:hover{
+
+    border-color:#93c5fd;
+
+}
+
+.transport-grid select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.08);
+
+}
+
+/* SEARCH BUTTON */
+
+.search-btn-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:35px;
+
+}
+
+/* LOADING */
+
+.loading-box{
+
+    max-width:1200px;
+
+    margin:0 auto 25px auto;
+
+    height:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    border:1px dashed #cbd5e1;
+
+    border-radius:18px;
+
+    color:#2563eb;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+/* RESULTS */
+
+#resultsSection{
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+}
+
+/* AI PICK */
+
+.ai-pick{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+
+    border:1px solid #dbeafe;
+
+    border-radius:18px;
+
+}
+
+.ai-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.best-tag{
+
+    width:fit-content;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.ai-pick h2{
+
+    font-size:40px;
+
+    margin:0;
+
+}
+
+.ai-pick p{
+
+    color:#6b7280;
+
+    font-size:15px;
+
+}
+
+.ai-right{
+
+    text-align:center;
+
+}
+
+.ai-score-big{
+
+    font-size:54px;
+
+    font-weight:800;
+
+    color:#2563eb;
+
+}
+
+.ai-right small{
+
+    color:#6b7280;
+
+}
+
+/* CARRIER LIST */
+
+.carrier-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* CARD */
+
+.carrier-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.25s;
+
+}
+
+.carrier-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.06);
+
+}
+
+.carrier-card h3{
+
+    font-size:21px;
+
+    margin-bottom:8px;
+
+}
+
+.carrier-card p{
+
+    color:#6b7280;
+
+}
+
+/* RIGHT SIDE */
+
+.carrier-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+/* SCORE */
+
+.score{
+
+    background:#eef4ff;
+
+    color:#2563eb;
+
+    padding:10px 16px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+/* SELECT BUTTON */
+
+.select-btn{
+
+    min-width:150px;
+
+}
+
+/* FADE ANIMATION */
+
+#resultsSection{
+
+    animation:fadeIn .4s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+#carrierToast{
+
+    font-family:'Inter',sans-serif;
+
+    min-width:260px;
+
+    text-align:center;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .transport-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:800px){
+
+    .carrier-card{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .carrier-right{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    .ai-pick{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:25px;
+
+    }
+
+    .ai-score-big{
+
+        font-size:40px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .search-card{
+
+        padding:20px;
+
+    }
+
+    .ai-pick h2{
+
+        font-size:30px;
+
+    }
+
+}
+

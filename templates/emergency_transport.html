@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Emergency Transport
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/emergency.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- SEARCH SECTION -->
+
+<div class="dashboard-card search-card">
+
+    <h2>🚚 Smart Carrier Recommendation Engine</h2>
+
+    <p class="subtitle">
+        AI ranks carriers based on ETA, cost, reliability,
+        disruption risk and historical performance.
+    </p>
+
+    <div class="transport-grid">
+
+        <div>
+
+            <label>Origin</label>
+
+            <select>
+
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Chennai</option>
+                <option>Bangalore</option>
+                <option>Singapore</option>
+
+            </select>
+
+        </div>
+
+        <div>
+
+            <label>Destination</label>
+
+            <select>
+
+                <option>Germany</option>
+                <option>Dubai</option>
+                <option>USA</option>
+                <option>Japan</option>
+                <option>London</option>
+
+            </select>
+
+        </div>
+
+        <div>
+
+            <label>Weight</label>
+
+            <select>
+
+                <option>50 KG</option>
+                <option>100 KG</option>
+                <option>250 KG</option>
+                <option>500 KG</option>
+                <option>1000 KG</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <div class="search-btn-container">
+
+        <button
+            id="findCarrierBtn"
+            class="primary-btn">
+
+            🔍 Find Best Carrier
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- AI LOADING -->
+
+<div
+    id="loadingBox"
+    class="loading-box">
+
+    🤖 AI Agent Ready
+
+</div>
+
+<!-- RESULTS -->
+
+<div
+    id="resultsSection">
+
+    <!-- AI TOP PICK -->
+
+    <div class="ai-pick">
+
+        <div class="ai-left">
+
+            <span class="best-tag">
+
+                🏆 AI TOP PICK
+
+            </span>
+
+            <h2>DHL Express</h2>
+
+            <p>
+
+                Lowest Delay Risk • Fastest ETA • Best Reliability
+
+            </p>
+
+        </div>
+
+        <div class="ai-right">
+
+            <div class="ai-score-big">
+
+                96%
+
+            </div>
+
+            <small>
+
+                AI Confidence
+
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- CARRIER LIST -->
+
+    <div class="carrier-list">
+
+        <!-- CARD 1 -->
+
+        <div class="carrier-card">
+
+            <div>
+
+                <h3>#1 DHL Express ⭐ 4.9</h3>
+
+                <p>
+                    ETA 2 Days • ₹48/kg • Reliability 98%
+                </p>
+
+            </div>
+
+            <div class="carrier-right">
+
+                <span class="score">
+                    AI Score 96%
+                </span>
+
+                <button class="primary-btn select-btn">
+
+                    Select Carrier
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="carrier-card">
+
+            <div>
+
+                <h3>#2 FedEx ⭐ 4.8</h3>
+
+                <p>
+                    ETA 3 Days • ₹46/kg • Reliability 96%
+                </p>
+
+            </div>
+
+            <div class="carrier-right">
+
+                <span class="score">
+                    AI Score 93%
+                </span>
+
+                <button class="primary-btn select-btn">
+
+                    Select Carrier
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="carrier-card">
+
+            <div>
+
+                <h3>#3 UPS ⭐ 4.7</h3>
+
+                <p>
+                    ETA 3 Days • ₹49/kg • Reliability 95%
+                </p>
+
+            </div>
+
+            <div class="carrier-right">
+
+                <span class="score">
+                    AI Score 91%
+                </span>
+
+                <button class="primary-btn select-btn">
+
+                    Select Carrier
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="carrier-card">
+
+            <div>
+
+                <h3>#4 BlueDart ⭐ 4.6</h3>
+
+                <p>
+                    ETA 4 Days • ₹39/kg • Reliability 94%
+                </p>
+
+            </div>
+
+            <div class="carrier-right">
+
+                <span class="score">
+                    AI Score 89%
+                </span>
+
+                <button class="primary-btn select-btn">
+
+                    Select Carrier
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 5 -->
+
+        <div class="carrier-card">
+
+            <div>
+
+                <h3>#5 Maersk ⭐ 4.7</h3>
+
+                <p>
+                    ETA 8 Days • ₹24/kg • Reliability 97%
+                </p>
+
+            </div>
+
+            <div class="carrier-right">
+
+                <span class="score">
+                    AI Score 88%
+                </span>
+
+                <button class="primary-btn select-btn">
+
+                    Select Carrier
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/emergency.js') }}"></script>
+{% endblock %}

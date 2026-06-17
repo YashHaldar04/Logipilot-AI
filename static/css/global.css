@@ -1,0 +1,430 @@
+
+/* ===========================
+   GLOBAL RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f5f7fb;
+
+    color:#111827;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+
+.layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    width:270px;
+
+    background:#ffffff;
+
+    border-right:1px solid #e5e7eb;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:22px;
+
+    position:sticky;
+
+    top:0;
+
+    height:100vh;
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+.logo-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    color:white;
+
+}
+
+.logo-section h2{
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.logo-section p{
+
+    font-size:13px;
+
+    color:#6b7280;
+
+    margin-top:4px;
+
+}
+
+/* ===========================
+   SIDEBAR MENU
+=========================== */
+
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.nav-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 16px;
+
+    border-radius:12px;
+
+    transition:.25s;
+
+    color:#374151;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+.nav-item:hover{
+
+    background:#eef4ff;
+
+    color:#2563eb;
+
+}
+
+.nav-item i{
+
+    width:18px;
+
+}
+
+/* ===========================
+   STATUS CARD
+=========================== */
+
+.status-card{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:16px;
+
+}
+
+.status-card small{
+
+    color:#6b7280;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+}
+
+.status-card h4{
+
+    margin-top:8px;
+
+    margin-bottom:5px;
+
+    font-size:18px;
+
+}
+
+.status-card p{
+
+    color:#6b7280;
+
+    font-size:13px;
+
+}
+
+/* ===========================
+   MAIN
+=========================== */
+
+.main-content{
+
+    flex:1;
+
+    padding:35px;
+
+}
+
+/* ===========================
+   TOPBAR
+=========================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:42px;
+
+    font-weight:800;
+
+}
+
+.topbar p{
+
+    margin-top:8px;
+
+    color:#6b7280;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.ai-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.ai-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(37,99,235,.20);
+
+}
+
+.primary-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px 18px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(37,99,235,.18);
+
+}
+
+.full-btn{
+
+    width:100%;
+
+    margin-top:22px;
+
+}
+
+/* ===========================
+   GENERIC CARD
+=========================== */
+
+.dashboard-card,
+.stat-card,
+.hero-alert{
+
+    background:white;
+
+    border:1px solid #e7eaf0;
+
+    border-radius:18px;
+
+    box-shadow:
+
+        0 1px 2px rgba(0,0,0,.04),
+
+        0 8px 24px rgba(0,0,0,.03);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+    .sidebar{
+
+        width:90px;
+
+    }
+
+    .logo-section p,
+    .logo-section h2,
+    .status-card,
+    .nav-item span{
+
+        display:none;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .layout{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        height:auto;
+
+        position:relative;
+
+    }
+
+    .main-content{
+
+        padding:18px;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .topbar h1{
+
+        font-size:32px;
+
+    }
+
+}
+

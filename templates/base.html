@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LogiPilot - AI Supply Chain Copilot</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Global CSS -->
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/global.css') }}">
+
+    <!-- Page CSS -->
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo-section">
+
+                <div class="logo-icon">
+                    🚚
+                </div>
+
+                <div>
+
+                    <h2>LogiPilot</h2>
+
+                    <p>AI Supply Chain Copilot</p>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-menu">
+
+                <a href="/" class="nav-item">
+
+                    <i class="fa-solid fa-table-columns"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="/hs" class="nav-item">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>HS Classifier</span>
+
+                </a>
+
+                <a href="/emergency" class="nav-item">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                    <span>Emergency Transport</span>
+
+                </a>
+
+                <a href="/delay" class="nav-item">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <span>Delay Predictor</span>
+
+                </a>
+
+                <a href="/risk" class="nav-item">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <span>Risk Assessment</span>
+
+                </a>
+
+            </div>
+
+            <div class="sidebar-bottom">
+
+                <div class="status-card">
+
+                    <small>AI STATUS</small>
+
+                    <h4>Online</h4>
+
+                    <p>Monitoring 1,248 Shipments</p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        {% block page_title %}
+                        Dashboard
+                        {% endblock %}
+                    </h1>
+
+                    <p>
+                        AI Powered Logistics Intelligence Platform
+                    </p>
+
+                </div>
+
+                <div class="topbar-right">
+
+                    <button class="ai-btn">
+
+                        ✨ AI Assistant
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+    </div>
+
+    {% block js %}
+    {% endblock %}
+
+</body>
+
+</html>
