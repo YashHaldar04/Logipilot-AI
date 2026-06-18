@@ -29,6 +29,10 @@
 
     <!-- Page CSS -->
 
+    <link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/assistant.css') }}">
+
     {% block css %}
     {% endblock %}
 
@@ -140,11 +144,13 @@
 
                 <div class="topbar-right">
 
-                    <button class="ai-btn">
+                    <button
+    class="ai-btn"
+    id="openAssistant">
 
-                        ✨ AI Assistant
+    ✨ AI Assistant
 
-                    </button>
+</button>
 
                 </div>
 
@@ -160,6 +166,126 @@
     {% block js %}
     {% endblock %}
 
+
+    <!-- =========================================
+     AI ASSISTANT PANEL
+========================================= -->
+
+<div
+id="assistantOverlay"
+class="assistant-overlay">
+
+</div>
+
+<div
+id="assistantPanel"
+class="assistant-panel">
+
+<div class="assistant-header">
+
+    <div>
+
+        <h2>
+            🤖 LogiPilot AI
+        </h2>
+
+        <small>
+            Online
+        </small>
+
+    </div>
+
+    <button
+        id="closeAssistant"
+        class="close-btn">
+
+        ✕
+    </button>
+
+</div>
+
+<div class="assistant-body">
+
+    <div class="assistant-welcome">
+
+        <h3>
+
+            Hello Operator 👋
+
+        </h3>
+
+        <p>
+
+            Choose a workflow below.
+
+        </p>
+
+    </div>
+
+    <!-- TOOLS -->
+
+    <div class="tool-card"
+         data-tool="documents">
+
+        📄 Document Q&A
+
+        <span>
+            Ask shipment documents
+        </span>
+
+    </div>
+
+    <div class="tool-card"
+         data-tool="invoice">
+
+        🧾 Invoice Analyzer
+
+        <span>
+            Analyze freight invoices
+        </span>
+
+    </div>
+
+    <div class="tool-card"
+         data-tool="report">
+
+        📊 Dashboard Report
+
+        <span>
+            Generate operational report
+        </span>
+
+    </div>
+
+    <div class="tool-card"
+         data-tool="trade">
+
+        🌍 Global Trade Pulse
+
+        <span>
+            Logistics intelligence feed
+        </span>
+
+    </div>
+
+    <!-- OUTPUT AREA -->
+
+    <div
+        id="assistantContent"
+        class="assistant-content">
+
+        Select a tool to begin.
+
+    </div>
+
+</div>
+
+</div>
+
+<script
+src="{{ url_for('static',
+filename='js/assistant.js') }}">
+</script>
 </body>
 
 </html>

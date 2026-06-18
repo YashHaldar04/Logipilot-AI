@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+HS Classifier
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/hs.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="hs-card">
+
+    <h2>
+
+        📦 HS Code Classifier
+
+    </h2>
+
+    <p>
+
+        Enter product description
+
+    </p>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="product"
+            placeholder="Laptop Battery"
+            required>
+
+        <button
+            class="primary-btn">
+
+            Predict HS Code
+
+        </button>
+
+    </form>
+
+</div>
+
+{% if results %}
+
+<div class="results">
+
+    {% for item in results %}
+
+    <div class="result-card">
+
+        <h3>
+
+            HS Code:
+            {{ item.hscode }}
+
+        </h3>
+
+        <p>
+
+            {{ item.description }}
+
+        </p>
+
+        <span>
+
+            Confidence:
+            {{ item.confidence }}%
+
+        </span>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endif %}
+
+{% endblock %}
